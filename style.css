@@ -1,0 +1,112 @@
+body {
+    background: rgb(149, 149, 204);
+}
+.window{
+            margin: auto;
+            background-color: rgb(165, 165, 232);
+            border: 5px dotted purple;
+            /* border: 5px dotted blue; */
+            padding: 20px;   
+            width: 30%;     
+            display: flex;    
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
+input, label, button, fieldset {
+    margin: auto;
+    background: rgb(149, 149, 204);
+    border-radius: 20%;
+    padding: 5px;
+    margin: 15px;
+    
+    
+}
+fieldset {
+    background-color: rgb(165, 165, 232);
+}
+.error{
+            margin: auto;
+            background-color: rgb(232, 165, 173);
+            border: 5px dotted red;
+            padding: 20px;   
+            width: 30%;     
+            
+}
+.error > label {
+    background-color: rgb(204, 149, 154);
+    margin: 5px;
+}
+.ok label {
+    background-color: rgb(154, 204, 149);
+    margin: 5px; 
+    
+}
+.ok{
+            margin: auto;
+            background: rgb(154, 204, 149);
+            border: 5px dotted greenyellow;
+            padding: 20px;   
+            width: 30%;     
+            
+}
+li a {
+    background-color: rgb(165, 165, 232);
+    border-radius: 10%;
+    padding: 5px;
+    margin: 15px;
+    /* border: 5px outset blue; */
+    display: block;
+    /* justify-content: end; */
+    text-decoration: none;
+    padding: 10px;
+    width: 400px;
+    
+}
+ul {
+    display:flex;
+    flex-direction: row;
+    /* background-color: rgb(90, 90, 180); */
+    margin:0;
+    padding: 0;
+    list-style-type: none;
+    
+}
+header, footer {
+    text-align: center;
+    background-color: rgb(58, 58, 106);
+    border: 5px outset purple;
+    /* border: 5px outset blue; */
+    height: 200px;
+}
+footer{
+    /* justify-content: end; */
+}
+*{
+    text-align: center;
+    margin: 30, 30, 30, 30;
+    font-family: sans-serif;
+    font-size: 40px;
+    color: rgba(12, 9, 107, 0.842);
+    
+    
+}
+main {
+    height: calc(100% - 400px);
+
+}
+
+ a{
+    /* background: purple; */
+    /* color: rgba(55, 53, 127, 0.304); */
+    padding: 5px;
+    margin:20px;
+    background-color: rgb(165, 165, 232);
+    border-radius: 20%;
+    padding: 5px;
+    margin: 15px, 10px, 15px, 10px;
+    border: 5px double purple;
+    
+    width: 20%;
+    text-decoration: none;
+    
+}

@@ -1,0 +1,368 @@
+@here Skrót chyba najważniejszego bloku zajęć na całym kursie. Oto skondensowane podsumowanie tego, co opanowaliśmy:
+
+🧠 Kluczowe Koncepcje (Teoria)
+Składnia: Wiemy, że kod PHP zamykamy w <?php ... ?>, zmienne zawsze zaczynają się od $, a do wyświetlania służy echo.
+
+Typy Danych: Poznaliśmy String (tekst), Integer (liczby), Float (ułamki), Boolean (true/false) i NULL. Zapomniałem to przekazać ale należy pamiętać też, że ' ' (apostrof) traktuje tekst dosłownie, a " (cudzysłów) szuka w nim zmiennych
+
+Debugowanie: Nasz nowy najlepszy przyjaciel to var_dump(), który pokazuje DOKŁADNIE co jest w zmiennej (typ i wartość).
+
+Operatory:
+
+Arytmetyczne: +, -, *, / i super-użyteczny % (modulo, czyli reszta z dzielenia).
+
+Łączenia (Konkatenacji): Używamy kropki . aby łączyć teksty.
+
+Przypisania: +=, .= (skrócone zapisy).
+
+KRYTYCZNA RÓŻNICA: Pamiętajcie na zawsze:
+
+== (równy) -> sprawdza tylko wartość (5 == "5" to true)
+
+=== (identyczny) -> sprawdza wartość I typ (5 === "5" to false). Będziemy używać głównie tego!
+
+Logika: Będziemy używać && (AND - "i") oraz || (OR - "lub").
+
+Podejmowanie Decyzji: Zaczęliśmy sterować programem za pomocą if, else i elseif. To jest mózg naszej aplikacji!
+
+🛠️ Co Przećwiczyliśmy? (Praktyka)
+wizytowka.php: Stworzyliśmy zmienne i połączyliśmy je w zdanie za pomocą kropki (.).
+
+kalkulator.php: Przećwiczyliśmy wszystkie operatory arytmetyczne.
+
+produkt.php: Realne obliczenia z świata kwot brutto netto
+
+wiek.php & oceny.php: Napisaliśmy pierwszą prawdziwą logikę, która podejmuje decyzje w zależności od wartości zmiennej. Użyliśmy też funkcji wbudowanej date() aby pobrać aktualny rok.
+
+Kawał świetnej roboty! Do zobaczenia jutro!
+Kuba Przybysz [CODE],  — 02.03.2026 09:42
+Oto superskrót tego, co ostatnio opanowaliście:
+
+🧠 Zaawansowane Warunki
+switch: Umiemy już używać instrukcji switch do czystego sprawdzania wielu możliwych wartości jednej zmiennej (jak w naszym "Menu Restauracji"). Pamiętajcie o break po każdym case
+
+Operator Trójargumentowy (?:): Opanowaliśmy super skrót dla prostego if...else. Zamiast 5 linijek kodu, piszemy jedną:
+
+$komunikat = ($liczba % 2 == 0) ? 'Parzysta' : 'Nieparzysta';
+
+📋 Tablice Indeksowane (Listy) i Pętla for
+Poznaliśmy tablice jako "super-zmienne" do przechowywania wielu wartości.
+
+Kluczowa zasada: Pierwszy element tablicy zawsze ma indeks [0].
+
+$listaZakupow = ["chleb", "mleko", "jajka"];
+echo $listaZakupow[1]; // Wyświetli "mleko"
+
+Nauczyliśmy się używać pętli for razem z funkcją count(), aby automatycznie przechodzić po całej liście i np. generować listę HTML.
+
+🔄 Inne Pętle (while) i Kontrola (break/continue)
+while: Pętla, która działa "dopóki" warunek jest prawdziwy.
+
+do...while: Pętla, która zawsze wykona się przynajmniej raz, a dopiero na końcu sprawdzi warunek.
+
+break: Całkowicie przerywa i wychodzi z pętli (jak w naszym losowaniu liczby 42).
+
+continue: Pomija resztę obecnej iteracji i przechodzi do następnego "obrotu" pętli (jak przy pomijaniu liczb mniejszych od 10).
+I dla chcących pobawić się emmetem tutaj link: https://docs.emmet.io/cheat-sheet/
+Kuba Przybysz [CODE],  — 04.03.2026 13:26
+Skrót ostatnich zajęć:
+ ⭐ Serce PHP: Tablice Asocjacyjne i foreach
+To najważniejszy temat z zajęć
+
+Tablice Asocjacyjne (Słowniki): Zamiast indeksów 0, 1, 2... używamy własnych kluczy (nazw), co jest mega czytelne:
+
+$user = [
+    "imie" => "Anna",
+    "nazwisko" => "Nowak",
+    "email" => "anna.nowak@example.com"
+];
+
+echo $user["email"]; // Wyświetli "anna.nowak@example.com"
+
+Pętla foreach: Najlepszy, najbezpieczniejszy i najwygodniejszy sposób na przeglądanie każdej tablicy (a zwłaszcza asocjacyjnej).
+
+// Wersja klucz + wartość (najbardziej przydatna!)
+foreach ($user as $klucz => $wartosc) {
+    echo $klucz . ": " . $wartosc . "<br>";
+}
+
+
+
+System Ocen: Przećwiczyliśmy switch do sprawdzania konkretnych wartości (case 4: ...) oraz operator trójargumentowy (?:) do szybkiego przypisania wartości na podstawie warunku ($zdane = ($ocena >= 3) ? true : false;).
+
+Lista Gości: Przypomnieliśmy sobie, jak tworzyć tablice indeksowane (listy) i jak po nich iterować za pomocą pętli for (for ($i = 0; $i < count($goscie); $i++)). Pamiętaliśmy, że indeksy liczymy od 0!
+
+🧠 Nowy Materiał: Tablice Wielowymiarowe
+To był główny temat dnia! Nauczyliśmy się, jak przechowywać "tablice w tablicy", co jest absolutną podstawą do pracy z danymi z bazy (którą niedługo poznamy).
+
+Analogia: Taka struktura to jak arkusz Excela – mamy wiersze (główna tablica) i kolumny (klucze w tablicy asocjacyjnej).
+
+Składnia: Poznaliśmy najczęstszą formę: tablica indeksowana, której każdy element jest tablicą asocjacyjną.
+$uzytkownicy = [
+    [ "imie" => "Anna", "email" => "anna@example.com" ],
+    [ "imie" => "Piotr", "email" => "piotr@example.com" ]
+];
+
+
+Dostęp do danych: Nauczyliśmy się "nurkować" w głąb struktury, np. echo $uzytkownicy[1]["email"]; (wyświetli "piotr@example.com").
+
+🛠️ Kluczowe Ćwiczenia (Praktyka)
+Lista Pracowników: Stworzyliśmy naszą pierwszą tablicę wielowymiarową i przećwiczyliśmy dostęp do konkretnych danych (np. pensja drugiego pracownika).
+
+Generowanie Tabeli HTML: To było kluczowe ćwiczenie dnia. Użyliśmy pętli foreach ($pracownicy as $pracownik) do iteracji po "wierszach", a następnie wewnątrz pętli odwoływaliśmy się do "kolumn" ($pracownik["imie"], $pracownik["stanowisko"]), aby dynamicznie zbudować tabelę <table> w HTML.
+Kuba Przybysz [CODE],  — 09.03.2026 13:39
+Skót ostatnich zajęć:
+Mini-Projekt: Katalog Produktów
+Na koniec zebraliśmy całą wiedzę z Modułu 2 w jednym dużym zadaniu. Nasz katalog produktów wykorzystywał:
+
+require_once (do łączenia header.php i footer.php).
+
+Tablicę wielowymiarową (do przechowywania listy produktów z ceną, dostępnością itd.).
+
+Pętlę foreach (do wyświetlenia wszystkich produktów).
+
+Instrukcję if...else wewnątrz pętli (do dynamicznego wyświetlania statusu "Dostępny" / "Niedostępny").
+
+
+📬 Moduł 3A: Formularze (Bloki 11-14)
+Nauczyliśmy się, jak zbierać dane od użytkownika i co z nimi robić.
+
+Metoda GET vs POST:
+
+GET: Dane są w URL (?page=kontakt). Używamy $_GET. Idealne do zakładek i wyszukiwania.
+
+POST: Dane są ukryte w ciele żądania. Używamy $_POST. Jedyne słuszne do haseł, e-maili i wrażliwych danych.
+
+Pierwsza Zasada Bezpieczeństwa: XSS ⚔️
+
+Problem: Użytkownik wpisuje <script>...</script> w pole formularza.
+
+Rozwiązanie: ZAWSZE używamy htmlspecialchars() przy wyświetlaniu (echo) danych od użytkownika.
+
+echo htmlspecialchars($zmienna);
+
+Profesjonalna Walidacja Danych:
+
+isset() to za mało. Używamy !empty() do sprawdzania, czy pole nie jest puste.
+
+Wzorzec Tablicy Błędów: Najlepsza praktyka. Tworzymy $errors = [] i dodajemy do niej komunikaty, jeśli walidacja się nie uda.
+
+Funkcje: Używaliśmy strlen() (długość) i filter_var($email, FILTER_VALIDATE_EMAIL) (do sprawdzania e-maili).
+Kuba Przybysz [CODE],  — 09.03.2026 17:13
+podsumowanie z dzisiaj:
+
+Zaawansowane Wzorce Formularzy:
+
+"Lepki" Formularz: Formularz i logika w jednym pliku. Sprawdzamy $_SERVER['REQUEST_METHOD'] === 'POST'. Używamy operatora ?? (value="<?php echo $imie ?? ''; ?>") aby formularz "pamiętał" wpisane dane po błędzie.
+
+Wzorzec PRG (Post-Redirect-Get):
+
+Problem: Odświeżenie (F5) strony po wysłaniu formularza wysyła go ponownie.
+
+Rozwiązanie: Po udanym zapisie POST, nigdy nie wyświetlamy "Dziękuję". Zamiast tego przekierowujemy użytkownika:
+
+header('Location: sukces.php');
+
+exit; (Absolutnie kluczowe!)
+
+🔐 Moduł 3B: Sesje (Bloki 15-16)
+Rozwiązaliśmy problem "braku pamięci" internetu (HTTP jest bezstanowy).
+
+Analogia Szatni: session_start(); to jak pobranie numerka do szatni. $_SESSION to nasza półka w tej szatni.
+
+Kluczowe Funkcje:
+
+session_start(); -> Musi być na samej górze KAŻDEGO pliku, który używa sesji, przed jakimkolwiek HTML-em!
+
+$_SESSION['zalogowany'] = true; -> Zapisywanie danych.
+
+if ($_SESSION['zalogowany']) ... -> Odczytywanie danych.
+
+session_destroy(); -> Wylogowanie (zniszczenie sesji).
+Kuba Przybysz [CODE],  — 19.03.2026 16:07
+Podsumowanie ostatnich zajęć
+System Logowania: Połączyliśmy wszystko!
+
+login.php (Formularz POST)
+
+weryfikuj.php (Sprawdza if..., jeśli OK, ustawia $_SESSION['zalogowany'] i robi header('Location: panel.php'))
+
+panel.php (Na górze sprawdza if (!isset($_SESSION['zalogowany'])) i jeśli nie, wyrzuca do login.php)
+
+wyloguj.php (Robi session_destroy() i odsyła do login.php)
+
+🍪 Moduł 3C: Ciasteczka (Cookies)
+Sesja vs Ciasteczko:
+
+Sesja: Dane na serwerze. Bezpieczne. Idealne do logowania.
+
+Ciasteczko: Dane u klienta (w przeglądarce). Mniej bezpieczne. Idealne do "Zapamiętaj mnie" lub "Tryb Ciemny".
+
+Tworzenie: setcookie('nazwa', 'wartosc', time() + (3600 * 24 * 30), '/'); (ustawia na 30 dni).
+
+KRYTYCZNA ZASADA: setcookie() (podobnie jak header()) musi być wywołane PRZED jakimkolwiek HTML-em lub echo.
+
+Odczyt: Używamy tablicy $_COOKIE.
+
+Skoro znacie już SQL, dzisiaj skupiliśmy się na tym, jak sprawić, by PHP "rozmawiało" z naszą bazą danych MySQL. Używaliśmy do tego rozszerzenia mysqli.
+
+Oto szybkie podsumowanie procesu, który przećwiczyliśmy:
+
+🎯 Cel Dnia: Odczyt Danych z Bazy i Wyświetlenie ich w HTML
+Przerobiliśmy kompletny, 4-etapowy proces pobierania danych:
+
+🔌 Krok 1: Połączenie z Bazą (new mysqli) Nauczyliśmy się, jak stworzyć obiekt połączenia, podając 4 kluczowe informacje: host, użytkownika, hasło i nazwę bazy.
+
+$mysqli = new mysqli('localhost', 'root', '', 'nazwa_waszej_bazy');
+
+🚦 Krok 2: Sprawdzenie Błędów (Kluczowe!) Zanim cokolwiek zrobimy, musimy sprawdzić, czy połączenie się udało.
+
+if ($mysqli->connect_errno) {
+    die("Błąd połączenia: " . $mysqli->connect_error);
+}
+
+❓ Krok 3: Wykonanie Zapytania (query) Używamy znanej nam komendy SQL (np. SELECT * ...) i przekazujemy ją do metody query():
+
+$sql = "SELECT imie, email FROM uzytkownicy";
+$wynik = $mysqli->query($sql);
+
+📥 Krok 4: Pobranie i Wyświetlenie Danych (Pętla while) To jest serce operacji! Wynik z bazy to obiekt. Musimy "wyciągać" z niego dane wiersz po wierszu, aż się skończą. Używamy do tego pętli while i metody fetch_assoc() lub fetch_array().
+
+fetch_assoc() zwraca jeden wiersz jako tablicę asocjacyjną.
+
+Pętla while automatycznie zatrzyma się, gdy skończą się wiersze.
+
+// Zaczynamy tabelę HTML
+echo "<table>";
+echo "<tr><th>Imię</th><th>Email</th></tr>";
+
+// Pętla, która pobiera każdy wiersz
+while ($wiersz = $wynik->fetch_assoc()) {
+    echo "<tr>";
+    echo "<td>" . $wiersz['imie'] . "</td>";
+    echo "<td>" . $wiersz['email'] . "</td>";
+    echo "</tr>";
+}
+
+echo "</table>";
+
+🔒 Krok 5: Zamknięcie Połączenia Dobra praktyka na koniec skryptu: $mysqli->close();
+Dzisiaj (i na ostatnich zajęciach) zrobiliśmy coś, co zamienia statyczną stronę w prawdziwą aplikację internetową. Połączyliśmy PHP z bazą danych MySQL i zbudowaliśmy kompletny system do zarządzania danymi!
+
+Oto podsumowanie naszych gigantycznych postępów:
+
+🏆 Projekt Dnia: Panel Admina "Mini-Magazyn" (Pełen CRUD!)
+Zbudowaliśmy od zera cały panel do zarządzania produktami. Każdy z was napisał skrypty, które realizują wszystkie 4 kluczowe operacje na bazie danych (CRUD):
+
+CREATE (Tworzenie): dodaj_produkt.php
+
+Używa formularza POST do wysłania danych.
+
+Bezpiecznie zapisuje nowy produkt do bazy.
+
+READ (Odczyt): index.php
+
+Używa SELECT * ... do pobrania wszystkich produktów.
+
+Używa pętli while...fetch_assoc() do wyświetlenia ich w tabeli HTML.
+
+UPDATE (Aktualizacja): edytuj_produkt.php
+
+Inteligentny skrypt 2-w-1:
+
+Tryb GET (?id=...): Pobiera dane (SELECT...WHERE) i wypełnia formularz.
+
+Tryb POST: Przetwarza edycję (UPDATE...WHERE).
+
+DELETE (Usuwanie): usun_produkt.php
+
+Pobiera id z $_GET i wykonuje DELETE...WHERE.
+
+Ważne: Używa header('Location: ...'), aby wrócić na listę!
+
+🛡️ NAJWAŻNIEJSZA LEKCJA: BEZPIECZEŃSTWO!
+To jest klucz do bycia programistą, a nie hobbystą.
+
+Problem (Blok 6): Zobaczyliśmy, co się stanie, gdy wstawimy dane wprost do zapytania (INSERT INTO... VALUES ('$login', ...)). Ktoś może wpisać ' OR 1=1 -- i złamać nam system (SQL Injection).
+
+Rozwiązanie (Blok 7): ZAPYTANIA PARAMETRYZOWANE
+
+To jedyny słuszny sposób wysyłania danych do bazy!
+
+Nauczyliśmy się oddzielać zapytanie (szablon) od danych (zmiennych).
+
+W mysqli (Prepared Statements): $sql = "INSERT INTO ... VALUES (?, ?, ?)"; $stmt->bind_param("ssi", $zmienna1, $zmienna2, $zmienna3);
+
+W PDO (Prostszy zapis): $sql = "INSERT INTO ... VALUES (:nazwa, :email)"; $stmt->execute(['nazwa' => $nazwa, 'email' => $email]);
+
+🔌 Dwa Sposoby na Połączenie (mysqli vs PDO)
+Blok 4: PDO (PHP Data Objects)
+
+Nowoczesne i Elastyczne: Nasz preferowany sposób.
+
+DSN: Nauczyliśmy się tworzyć "adres" bazy: mysql:host=...;dbname=...
+
+try...catch: Profesjonalna obsługa błędów połączenia.
+
+Alternatywa: mysqli (Obiektowo)
+
+Też świetne i bardzo popularne: $mysqli = new mysqli(...).
+
+Sprawdzanie błędów: if ($mysqli->connect_errno) { ... }
+
+Niezależnie od metody, mamy teraz plik config.php, który łączy się z bazą i który dołączamy za pomocą require_once. 
+Kuba Przybysz [CODE],  — 15:11
+Oto podsumowanie ostatniego maratonu:
+
+🧱 1. Nowy Świat: OOP (Programowanie Obiektowe)
+Zrozumieliśmy, że kod proceduralny jest jak przepis kulinarny, a OOP to kuchnia pełna inteligentnych urządzeń.
+
+Kluczowe pojęcia:
+
+Klasa (class): Projekt/schemat (np. User).
+
+Obiekt (new User()): Konkretna rzecz stworzona z tego schematu.
+
+Właściwości (public $name): Zmienne wewnątrz obiektu.
+
+Metody (function sayHello()): Funkcje, które ten obiekt może wykonać.
+
+$this: Sposób, w jaki obiekt mówi o "swoich" własnych danych.
+
+Hermetyzacja (Bezpieczeństwo danych):
+
+Nauczyliśmy się ukrywać "bebechy" klasy za pomocą private.
+
+Użyliśmy Konstruktora (__construct) do ustawiania danych startowych.
+
+Stworzyliśmy Gettery (getUsername()) do bezpiecznego odczytu danych prywatnych.
+
+🛡️ 2. Wielka Trójka Bezpieczeństwa
+To jest wiedza, która odróżnia profesjonalistę od amatora. Przećwiczyliśmy obronę przed trzema głównymi atakami:
+
+SQL Injection:
+
+Atak: Wstrzyknięcie kodu SQL przez formularz.
+
+Obrona: Tylko i wyłącznie Prepared Statements (Zapytania parametryzowane).
+
+XSS (Cross-Site Scripting):
+
+Atak: Wstrzyknięcie złośliwego JavaScriptu (<script>alert(...)</script>).
+
+Obrona: Tylko i wyłącznie htmlspecialchars() przy każdym wyświetlaniu (echo) danych od użytkownika.
+
+Wyciek Haseł:
+
+Problem: Hasła w czystym tekście (lub słabe md5) to proszenie się o kłopoty.
+
+Obrona:
+
+Zapis: password_hash($haslo, PASSWORD_DEFAULT)
+
+Sprawdzanie: password_verify($haslo, $hash_z_bazy)
+
+🏗️ 3. Czysty Kod i Projekt Finałowy
+Clean Code: Wiemy już, że nie wrzucamy wszystkiego do jednego pliku. Dzielimy kod na config.php, functions.php, includes/. Piszemy czytelne nazwy zmiennych ($uzytkownicy, a nie $u).
+
+START PROJEKTU: Każdy z Was wybrał swój finałowy projekt (Blog, System Rezerwacji itp.) i zaczął najważniejszy etap: planowanie bazy danych.

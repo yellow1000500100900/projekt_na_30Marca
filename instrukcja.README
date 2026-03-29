@@ -1,0 +1,30 @@
+ Propozycja 1: Prosty System Blogowy (Mini-CMS),
+Opis:
+Klasyczny projekt, który idealnie testuje wszystkie umiejętności. Uczniowie tworzą system, w którym publiczna część strony wyświetla posty, a chroniona hasłem "admin" pozwala nimi zarządzać.
+
+Kluczowe Funkcjonalności:
+
+Strona Publiczna (Read):
+Strona główna wyświetlająca listę wszystkich postów (tytuł + fragment).,
+Strona pojedynczego posta wyświetlająca jego pełną treść.,
+,
+Panel Administratora (Create, Update, Delete):
+Strona logowania do panelu (login.php).,
+Ochrona: Dostęp do panelu tylko po poprawnym logowaniu (wykorzystanie Sesji).,
+Dashboard: Wyświetla listę wszystkich postów z opcjami "Edytuj" i "Usuń".,
+Dodawanie: Formularz do tworzenia nowego posta (tytuł, treść).,
+Edycja: Formularz wypełniony danymi posta, który można zaktualizować.,
+Usuwanie: Potwierdzenie i usunięcie posta z bazy.,
+,
+Wylogowanie (logout.php).,
+
+Testuje przede wszystkim:
+
+Pełne CRUD (Create, Read, Update, Delete) na tabeli posty.,
+Zarządzanie stanem (logowanie) za pomocą Sesji.,
+Bezpieczeństwo: Haszowanie haseł (password_hash), ochrona przed SQL Injection (PDO), ochrona przed XSS (htmlspecialchars).,
+
+Rozszerzenie (dla chętnych):
+
+Dodanie systemu komentarzy pod postami (kolejny cykl CRUD).,
+Implementacja prostej wyszukiwarki.
